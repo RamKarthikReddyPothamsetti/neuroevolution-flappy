@@ -2,7 +2,7 @@
 
 All numbers from the runs in results.json. Pipes passed = pipes whose right edge reached the bird's left edge (x = 75) while the bird was alive. Cap = 9,000 frames = 99 pipes.
 
-## Experiment 1 - learning curve, Karthik's settings (20 runs)
+## Experiment 1 - learning curve, settings (20 runs)
 
 | generation | best pipes: median | IQR | min | max | flock-median pipes (median of runs) | best frames: median | flock-median frames (median of runs) |
 |---|---|---|---|---|---|---|---|
