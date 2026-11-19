@@ -1,16 +1,16 @@
 import pygame
 import numpy as np
 from sys import exit
-import os   # (added with Claude)
+import os
 
 WIDTH = 1280
 HEIGHT = 720
 PIPE_EVERY = 90
-HEADLESS = True          # True = train fast with no window, False = watch   (added with Claude)
-MAX_FRAMES = 9000        # a generation ends after this many frames, ~100 pipes   (added with Claude)
-MAX_GENERATIONS = 30     # the whole run stops after this many generations   (added with Claude)
+HEADLESS = True     
+MAX_FRAMES = 9000 
+MAX_GENERATIONS = 30  
 
-if HEADLESS: os.environ["SDL_VIDEODRIVER"] = "dummy"   # fake screen, no window   (added with Claude)
+if HEADLESS: os.environ["SDL_VIDEODRIVER"] = "dummy"  
 
 pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -131,7 +131,7 @@ birds = [Bird(rng_bird, rng_color) for i in range(50)]
 
 generation = 1
 frames_since_pipe = 0
-frames_this_gen = 0   # (added with Claude)
+frames_this_gen = 0
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -141,7 +141,7 @@ while True:
     if not HEADLESS: screen.fill((0, 0, 0))
 
     frames_since_pipe += 1
-    frames_this_gen += 1   # (added with Claude)
+    frames_this_gen += 1
     if frames_since_pipe >= PIPE_EVERY:
         pipes.append(Pipe(rng_pipe))
         frames_since_pipe = 0
@@ -161,16 +161,16 @@ while True:
             bird.survive()
             if not HEADLESS: bird.draw()
 
-    if not any(bird.is_alive for bird in birds) or frames_this_gen >= MAX_FRAMES:   # frame cap (added with Claude)
+    if not any(bird.is_alive for bird in birds) or frames_this_gen >= MAX_FRAMES: 
         best = max(bird.score for bird in birds)
-        median = np.median([bird.score for bird in birds])   # (added with Claude)
+        median = np.median([bird.score for bird in birds])
         print(f"gen {generation}: best {best} median {median}")
         birds = next_generation(birds)
         pipes = [Pipe(rng_pipe)]
         frames_since_pipe = 0
-        frames_this_gen = 0   # (added with Claude)
+        frames_this_gen = 0
         generation += 1
-        if generation > MAX_GENERATIONS:   # generation cap (added with Claude)
+        if generation > MAX_GENERATIONS:
             break
 
 
@@ -178,4 +178,4 @@ while True:
         pygame.display.update()
         clock.tick(600000)
 
-pygame.quit()   # (added with Claude)
+pygame.quit()
