@@ -37,7 +37,7 @@ All numbers from the runs in results.json. Pipes passed = pipes whose right edge
 | 29 | 99 | 99-99 | 99 | 99 | 0.75 | 9000 | 185.75 |
 | 30 | 99 | 99-99 | 99 | 99 | 1 | 9000 | 208 |
 
-Karthik's original seeds (rng_bird 1, rng_pipe 2), best pipes per generation: 0, 13, 11, 9, 18, 23, 25, 7, 31, 5, 84, 33, 67, 70, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99
+Original seeds (rng_bird 1, rng_pipe 2), best pipes per generation: 0, 13, 11, 9, 18, 23, 25, 7, 31, 5, 84, 33, 67, 70, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99
 
 ### Who passes pipes inside the flock (generations 2-30, all 20 runs)
 
